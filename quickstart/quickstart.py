@@ -64,7 +64,14 @@ agent = create_agent(
 config = {"configurable": {"thread_id": "1"}}
 
 response = agent.invoke(
-    {"messages": [{"role": "user", "content": "what is the weather outside?"}]},
+    {"messages":  # 传入消息列表
+        [
+            {
+                "role": "user",
+                "content": "what is the weather outside?"
+            }
+        ]
+    },
     config=config,
     context=Context(user_id="1")
 )
